@@ -3,7 +3,7 @@
 #include"playerInput.h"
 
 using namespace std;
-
+ 
 //These are used for functions that aren't above int main()
 string getusername();
 string getuserinput();

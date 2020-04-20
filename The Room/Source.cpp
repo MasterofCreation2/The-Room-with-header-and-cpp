@@ -1,12 +1,8 @@
-#include<iostream>
-#include<string>
-#include"playerInput.h"
+#include <iostream>
+#include <string>
+#include "playerInput.h"
 
 using namespace std;
- 
-//These are used for functions that aren't above int main()
-string getusername();
-string getuserinput();
 
 int main()
 {
@@ -27,9 +23,18 @@ int main()
 		cout << "\nYou take a look around to see a few things in the room with you.";
 		cout << "\nWhat was in view was a table, a knife and a bed from which you woke up from.\n";
 
+		player MainCharacter("23", userName, "Alive");
+
+		MainCharacter.speak("\nHello there I am just a being within this world and dont you forget it.");
+		MainCharacter.speak("\nI am the main charcter you are playing as now or rather I am you.");
+		MainCharacter.speak("\nOh, crap I wasn't suppose to say that, just for get everything I said.");
+		MainCharacter.speak("\nOh and have fun with the simulation.");
+
 		cout << "\nType Knife to get the knife.";
 		cout << "\nType Table to go to the table.";
 		cout << "\nType Bed to go to the bed.\n";
+
+
 
 		//This is for grabbing the statements below
 		string userInput = getuserinput();
@@ -66,6 +71,21 @@ int main()
 			cout << "Oh no you typed in the wrong thing";
 		}
 
+		//This is for my pointer and refrence
+		string comment;
+		comment = "\nThe world is round\n";
+
+		//This is my refrence that just gives some tips about the world
+		string& ref_comment = comment;
+		cout << ref_comment << "\nDid you know that the world is very roand. It is not flat at all.";
+		cout << "\nWell mabye it is round but I like to think that it is square haha.";
+		cout << "\nGet its square no i'll stop.|n";
+		
+		//This is my pointer that just gives you a little info
+		string* pnt_comment = &comment;
+		cout << "\nHey did you want to see hexa decimal numbers well here you go because why not: "
+			 << &comment;
+
 		//This just states if the player would like to play again or not
 		cout << "\n\nDo you want to play again (Y/N)\n\n";
 		cin >> again;
@@ -77,4 +97,3 @@ int main()
 	return 0;
 
 }
-
